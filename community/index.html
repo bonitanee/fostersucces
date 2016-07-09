@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Foster Success</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+
+		<!-- The main CSS file -->
+		<link href="style.css" rel="stylesheet" />
+		<!-- Contact Form CSS files -->
+		<link type='text/css' href='css/basic.css' rel='stylesheet' media='screen' />
+
+<script type="text/javascript">
+// select the relevant <input> elements, and using on() to bind a change event-handler:
+// $('input[name="react"]').on('change', function() {
+//   // this, in the anonymous function, refers to the changed-<input>:
+//   // select the element(s) you want to show/hide:
+//   $('.business-fields')
+//       // pass a Boolean to the method, if the numeric-value of the changed-<input>
+//       // is exactly equal to 2 and that <input> is checked, the .business-fields
+//       // will be shown:
+//       .toggle(+this.value === 2 && this.checked);
+// // trigger the change event, to show/hide the .business-fields element(s) on
+// // page-load:
+// }).change();
+	
+
+</script>
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
+	<body ng-app="instantSearch" ng-controller="InstantSearchController">
+	
+		<div id='content'>
+		<div id='basic-modal'>
+
+		<div class="bar">
+		<a href='#' class='basic'><img src="images/bellwhite.png" class="bellwhite"/></a>
+			<!-- Create a binding between the searchString model and the text field -->
+			<input type="text" ng-model="searchString" placeholder="Search" />
+			<a href="profile.html"><img src="images/user.png" class="userwhite"></a>
+		</div>
+
+		</div>
+		
+		<!-- modal content -->
+		<div id="basic-modal-content">
+			<h3>Hi Jenny </h3>
+			<form>
+
+			<div>
+
+			How did Kevin react when you asked him how his day at school was?<br/><br/>
+			<input type="radio" name="react" value="0" ng-model="searchValue"/> He was angry <br/>
+			<input type="radio" name="react" value="1" /> He was apathetic<br/>
+			<input type="radio" name="react" value="2" /> He was happy<br/>
+			<input type="radio" name="react" value="3" /> He was excited<br/>  
+
+
+			</div>	
+			<br/>
+
+			<div class="business-fields"> Kevin has been expressing aggression frequently and this could be a sign of attachment disorder. Here some posts from parents experiencing similar situations.
+			</div>
+
+			
+			
+			</form>
+		</div>
+		</div>	
+
+
+<!-- modal content -->
+		<div id="addquestions-modal-content">
+			<h3>Share your experience  </h3>
+			<p>
+				<textarea rows="5"  id="addQuestion">
+					 
+				</textarea>
+				
+
+			</p>
+			<span>
+				<button class="modalbutton" id="cancelQuestion">Cancel</button> 
+				<a class="simplemodal-close" title="" ><button class="modalbutton" id="saveQuestion">Save</button></a>	
+			</span>
+
+		</div>
+		</div>	
+
+
+		<ul>
+			<!-- Render a li element for every entry in the items array. Notice
+				 the custom search filter "searchFor". It takes the value of the
+				 searchString model as an argument.
+			 -->
+			<li class="questioncards" ng-repeat="i in items | searchFor:searchString" | searchForRadio>
+				<a href="{{i.url}}"><img ng-src="{{i.image}}" />
+				<p class="questions" >{{i.questions}}</p>
+				<p class="answers">{{i.answers}}</p>
+				<p class="comments">{{i.comments}}</p>
+				</a>
+
+			</li>
+		</ul>
+		<div class="AddQuestions">
+			<a href='#' class='addQuestion'><img class="plusicon" src="images/plus.png"></a>
+		</div>
+
+
+
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="angular.min.js"></script>
+		<script src="script.js"></script>
+		<!-- Load jQuery, SimpleModal and Basic JS files -->
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='js/basic.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	</body>
+</html>
